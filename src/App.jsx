@@ -21,6 +21,7 @@ export default function App() {
       <button className='btn btn-primary' onClick={()=>increment(10)}>Add</button>
       <button className='btn btn-primary' onClick={()=>decrement(10)}>sud</button>
       <button className='btn btn-primary' onClick={()=>setnumber(0)}>reset</button>
+      <button className='btn btn-primary' onClick={()=>setnumber(0)}>222222</button>
     </div>
   )
 }
