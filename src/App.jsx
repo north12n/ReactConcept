@@ -12,12 +12,14 @@ export default function App() {
     students.push(student);
   }
   const [dataStudent, setDataStudent] = useState(students);
+  const [Show, setShow] = useState(dataStudent);
+
   const deletEStudent = (id) => {
     setDataStudent(dataStudent.filter((item) => item.id != id));
   };
-  return (
-    <div>
-      <table class="table">
+
+  const table = ()=> (
+    <table class="table">
         <thead>
           <tr>
             <th scope="col">Id</th>
@@ -35,10 +37,24 @@ export default function App() {
                   Danger
                 </button>
               </th>
+            
             </tr>
+            
           ))}
+            
         </tbody>
       </table>
+  )
+
+
+
+  return (
+    <div>
+      {/* ถ้าเป็นจริงโชว์ตาราง */}
+      {Show && table()}
+      <button onClick={() => setShow(!Show)} type="button" class="btn btn-primary">
+       {Show ? "Hidden" : "Show"}
+      </button>
     </div>
   );
 }
