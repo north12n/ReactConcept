@@ -1,27 +1,28 @@
-import React, { useState } from 'react'
+import React from "react";
+import { useState } from "react";
 
 export default function App() {
-  // = public int number { get; set; }
-  const [number, setnumber] = useState(0)
-  
-
-  const increment = (n)=>{
-    // number = number + 20;
-    setnumber(number + n)
-    console.log(number);
-  }
-  const decrement = (n)=>{
-    setnumber(number - n)
-    console.log(number);
-  }
-
+  //props
+  const [number, setNumder] = useState(1);
+  //สร้างเป็น ฟังก์ชันเรียกใช้งาน
+  const Add = () => {
+    setNumder(number + 1);
+  };
+  const DeletE = () => setNumder(number - 1);
+  const Resset = () => setNumder(0);
+  //เรียกใช้ฟังก์ชันจาก const Add,DeletE,Reset
   return (
     <div>
-      {number}
-      <button className='btn btn-primary' onClick={()=>increment(10)}>Add</button>
-      <button className='btn btn-primary' onClick={()=>decrement(10)}>sud</button>
-      <button className='btn btn-primary' onClick={()=>setnumber(0)}>reset</button>
-      <button className='btn btn-primary' onClick={()=>setnumber(0)}>222222</button>
+      <p>{number}</p>
+      <button className="btn" onClick={Add}>
+        Add
+      </button>
+      <button className="btn" onClick={DeletE}>
+        Delete
+      </button>
+      <button className="btn" onClick={Resset}>
+        Resset
+      </button>
     </div>
-  )
+  );
 }
