@@ -1,17 +1,18 @@
-import Logo from "../image/logo.jpg";
+import React from "react";
+import logo from "../image/logo.jpg";
 import "./Header.css";
 
-//รับ props มาจาก component App
-//กระจายค่าออกมา title, major
 
-
-
-export default function Header(pros) {
-  const {title, major} = pros;
+function Header(props) {
+  const { title, major } = props;
+  
   return (
     <nav>
-      <img src={Logo} alt="logo" className="logo" />
-      <a href="/">{title} {major}</a>
+      <img src={logo} className="logo" />
+      <h3>{major}</h3>
+      <a href="/">{title}</a>
     </nav>
   );
 }
+
+export default Header;
